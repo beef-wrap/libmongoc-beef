@@ -1,5 +1,5 @@
 FileVersion = 1
-Dependencies = {corlib = "*", libbson-beef = "*"}
+Dependencies = {corlib = "*", libmongoc-beef = "*"}
 
 [Project]
 Name = "example"

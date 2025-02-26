@@ -1,5 +1,5 @@
 FileVersion = 1
-Projects = {libbson-beef = {Path = "."}, example = {Path = "example"}}
+Projects = {libmongoc-beef = {Path = "."}, example = {Path = "example"}, libbson-beef = {Path = "../libbson-beef"}}
 
 [Workspace]
 StartupProject = "example"
