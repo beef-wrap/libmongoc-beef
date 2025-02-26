@@ -1,0 +1,11 @@
+FileVersion = 1
+
+[Project]
+Name = "libbson-beef"
+TargetType = "BeefLib"
+StartupObject = "libbson_beef.Program"
+
+[Configs.Debug.Win64]
+OtherLinkFlags = "$(LinkFlags) ws2_32.lib"
+BeefLibType = "Static"
+LibPaths = ["$(ProjectDir)/lib/bson-static-1.0.lib"]
