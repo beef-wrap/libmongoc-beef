@@ -16,13 +16,13 @@
 
 using System;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
 	typealias mongoc_socklen_t = int;
 
-	public struct mongoc_stream_t { };
+	public struct mongoc_stream_t { }
 
 	[CRepr]
 	public struct mongoc_stream_poll_t

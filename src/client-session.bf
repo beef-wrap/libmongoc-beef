@@ -15,15 +15,16 @@
 */
 
 using System;
-using static libbsonBeef.libbson;
+using System.Interop;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
 	public function bool mongoc_client_session_with_transaction_cb_t(mongoc_client_session_t* session, void* ctx, bson_t** reply, bson_error_t* error);
 
-	public enum mongoc_transaction_state_t
+	public enum mongoc_transaction_state_t : c_int
 	{
 		MONGOC_TRANSACTION_NONE = 0,
 		MONGOC_TRANSACTION_STARTING = 1,
@@ -34,7 +35,7 @@ extension libmongoc
 
 	 /* these options types are named "opt_t" but their functions are named with
 	  * "opts", for consistency with the older mongoc_ssl_opt_t */
-	[CLink] public static extern mongoc_transaction_opt_t* mongoc_transaction_opts_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_transaction_opt_t* mongoc_transaction_opts_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern mongoc_transaction_opt_t* mongoc_transaction_opts_clone(mongoc_transaction_opt_t* opts); // BSON_GNUC_WARN_UNUSED_RESULT;
 
@@ -56,7 +57,7 @@ extension libmongoc
 
 	[CLink] public static extern mongoc_read_prefs_t* mongoc_transaction_opts_get_read_prefs(mongoc_transaction_opt_t* opts);
 
-	[CLink] public static extern mongoc_session_opt_t* mongoc_session_opts_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_session_opt_t* mongoc_session_opts_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern void mongoc_session_opts_set_causal_consistency(mongoc_session_opt_t* opts, bool causal_consistency);
 

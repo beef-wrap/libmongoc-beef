@@ -15,16 +15,16 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
 	public struct mongoc_bulkwriteopts_t;
 
-	[CLink] public static extern mongoc_bulkwriteopts_t*  mongoc_bulkwriteopts_new(void);
+	[CLink] public static extern mongoc_bulkwriteopts_t*  mongoc_bulkwriteopts_new();
 
 	[CLink] public static extern void mongoc_bulkwriteopts_set_ordered(mongoc_bulkwriteopts_t* self, bool ordered);
 
@@ -139,7 +139,7 @@ extension libmongoc
 
 	public struct mongoc_bulkwrite_insertoneopts_t;
 
-	[CLink] public static extern mongoc_bulkwrite_insertoneopts_t*  mongoc_bulkwrite_insertoneopts_new(void);
+	[CLink] public static extern mongoc_bulkwrite_insertoneopts_t*  mongoc_bulkwrite_insertoneopts_new();
 
 	[CLink] public static extern void mongoc_bulkwrite_insertoneopts_destroy(mongoc_bulkwrite_insertoneopts_t* self);
 
@@ -148,7 +148,7 @@ extension libmongoc
 
 	public struct mongoc_bulkwrite_updateoneopts_t;
 
-	[CLink] public static extern mongoc_bulkwrite_updateoneopts_t*  mongoc_bulkwrite_updateoneopts_new(void);
+	[CLink] public static extern mongoc_bulkwrite_updateoneopts_t*  mongoc_bulkwrite_updateoneopts_new();
 
 	[CLink] public static extern void mongoc_bulkwrite_updateoneopts_set_arrayfilters(mongoc_bulkwrite_updateoneopts_t* self, bson_t* arrayfilters);
 
@@ -167,7 +167,7 @@ extension libmongoc
 
 	public struct mongoc_bulkwrite_updatemanyopts_t;
 
-	[CLink] public static extern mongoc_bulkwrite_updatemanyopts_t*  mongoc_bulkwrite_updatemanyopts_new(void);
+	[CLink] public static extern mongoc_bulkwrite_updatemanyopts_t*  mongoc_bulkwrite_updatemanyopts_new();
 
 	[CLink] public static extern void mongoc_bulkwrite_updatemanyopts_set_arrayfilters(mongoc_bulkwrite_updatemanyopts_t* self, bson_t* arrayfilters);
 
@@ -184,7 +184,7 @@ extension libmongoc
 
 	public struct mongoc_bulkwrite_replaceoneopts_t;
 
-	[CLink] public static extern mongoc_bulkwrite_replaceoneopts_t*  mongoc_bulkwrite_replaceoneopts_new(void);
+	[CLink] public static extern mongoc_bulkwrite_replaceoneopts_t*  mongoc_bulkwrite_replaceoneopts_new();
 
 	[CLink] public static extern void mongoc_bulkwrite_replaceoneopts_set_collation(mongoc_bulkwrite_replaceoneopts_t* self, bson_t* collation);
 
@@ -201,7 +201,7 @@ extension libmongoc
 
 	public struct mongoc_bulkwrite_deleteoneopts_t;
 
-	[CLink] public static extern mongoc_bulkwrite_deleteoneopts_t*  mongoc_bulkwrite_deleteoneopts_new(void);
+	[CLink] public static extern mongoc_bulkwrite_deleteoneopts_t*  mongoc_bulkwrite_deleteoneopts_new();
 
 	[CLink] public static extern void mongoc_bulkwrite_deleteoneopts_set_collation(mongoc_bulkwrite_deleteoneopts_t* self, bson_t* collation);
 
@@ -214,7 +214,7 @@ extension libmongoc
 
 	public struct mongoc_bulkwrite_deletemanyopts_t;
 
-	[CLink] public static extern mongoc_bulkwrite_deletemanyopts_t*  mongoc_bulkwrite_deletemanyopts_new(void);
+	[CLink] public static extern mongoc_bulkwrite_deletemanyopts_t*  mongoc_bulkwrite_deletemanyopts_new();
 
 	[CLink] public static extern void mongoc_bulkwrite_deletemanyopts_set_collation(mongoc_bulkwrite_deletemanyopts_t* self, bson_t* collation);
 
@@ -235,7 +235,7 @@ extension libmongoc
 	// `mongoc_bulkwrite_new` and `mongoc_bulkwrite_set_client` may be used by
 	// language bindings that want to assemble a `mongoc_bulkwrite_t` and defer
 	// `mongoc_client_t` assignment to execution time.
-	[CLink] public static extern mongoc_bulkwrite_t*  mongoc_bulkwrite_new(void);
+	[CLink] public static extern mongoc_bulkwrite_t*  mongoc_bulkwrite_new();
 
 	[CLink] public static extern void mongoc_bulkwrite_set_client(mongoc_bulkwrite_t* self, mongoc_client_t* client);
 

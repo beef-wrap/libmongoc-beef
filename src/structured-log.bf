@@ -15,13 +15,14 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using System.Interop;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
-	public enum mongoc_structured_log_level_t
+	public enum mongoc_structured_log_level_t : c_int
 	{
 		MONGOC_STRUCTURED_LOG_LEVEL_EMERGENCY = 0,
 		MONGOC_STRUCTURED_LOG_LEVEL_ALERT = 1,
@@ -32,15 +33,15 @@ extension libmongoc
 		MONGOC_STRUCTURED_LOG_LEVEL_INFO = 6,
 		MONGOC_STRUCTURED_LOG_LEVEL_DEBUG = 7,
 		MONGOC_STRUCTURED_LOG_LEVEL_TRACE = 8,
-	};
+	}
 
-	public enum mongoc_structured_log_component_t
+	public enum mongoc_structured_log_component_t : c_int
 	{
 		MONGOC_STRUCTURED_LOG_COMPONENT_COMMAND = 0,
 		MONGOC_STRUCTURED_LOG_COMPONENT_TOPOLOGY = 1,
 		MONGOC_STRUCTURED_LOG_COMPONENT_SERVER_SELECTION = 2,
 		MONGOC_STRUCTURED_LOG_COMPONENT_CONNECTION = 3,
-	};
+	}
 
 	public struct mongoc_structured_log_entry_t;
 
@@ -48,7 +49,7 @@ extension libmongoc
 
 	function void mongoc_structured_log_func_t(mongoc_structured_log_entry_t* entry, void* user_data);
 
-	[CLink] public static extern mongoc_structured_log_opts_t*  mongoc_structured_log_opts_new(void);
+	[CLink] public static extern mongoc_structured_log_opts_t*  mongoc_structured_log_opts_new();
 
 	[CLink] public static extern void mongoc_structured_log_opts_destroy(mongoc_structured_log_opts_t* opts);
 

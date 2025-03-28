@@ -16,9 +16,9 @@
 
 using System;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
 extension libmongoc
 {
@@ -30,7 +30,7 @@ extension libmongoc
 
 	public struct mongoc_write_concern_t;
 
-	[CLink] public static extern mongoc_write_concern_t* mongoc_write_concern_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_write_concern_t* mongoc_write_concern_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern mongoc_write_concern_t* mongoc_write_concern_copy(mongoc_write_concern_t* write_concern); // BSON_GNUC_WARN_UNUSED_RESULT;
 

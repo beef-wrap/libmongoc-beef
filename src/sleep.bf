@@ -1,6 +1,6 @@
 using System;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {

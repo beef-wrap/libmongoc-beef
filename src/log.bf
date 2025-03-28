@@ -15,8 +15,9 @@
  */
 
 using System;
+using System.Interop;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
@@ -27,7 +28,7 @@ extension libmongoc
 	// #define MONGOC_INFO(...) mongoc_log (MONGOC_LOG_LEVEL_INFO, MONGOC_LOG_DOMAIN, __VA_ARGS__)
 	// #define MONGOC_DEBUG(...) mongoc_log (MONGOC_LOG_LEVEL_DEBUG, MONGOC_LOG_DOMAIN, __VA_ARGS__)
 
-	enum mongoc_log_level_t
+	public enum mongoc_log_level_t : c_int
 	{
 		MONGOC_LOG_LEVEL_ERROR,
 		MONGOC_LOG_LEVEL_CRITICAL,

@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
-using static libbsonBeef.libbson;
-using static libmongocBeef.libmongoc;
+using static libbson.libbson;
+using static libmongoc.libmongoc;
 
 namespace example;
 

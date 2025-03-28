@@ -15,8 +15,9 @@
  */
 
 using System;
+using System.Interop;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
@@ -32,7 +33,7 @@ extension libmongoc
 	*
 	* #mongoc_delete_flags_t are used when performing a delete operation.
 	*/
-	public enum mongoc_delete_flags_t
+	public enum mongoc_delete_flags_t : c_int
 	{
 		MONGOC_DELETE_NONE = 0,
 		MONGOC_DELETE_SINGLE_REMOVE = 1 << 0,
@@ -47,7 +48,7 @@ extension libmongoc
 	*
 	* #mongoc_remove_flags_t are used when performing a remove operation.
 	*/
-	public enum mongoc_remove_flags_t
+	public enum mongoc_remove_flags_t : c_int
 	{
 		MONGOC_REMOVE_NONE = 0,
 		MONGOC_REMOVE_SINGLE_REMOVE = 1 << 0,
@@ -62,7 +63,7 @@ extension libmongoc
 	*
 	* #mongoc_insert_flags_t are used when performing an insert operation.
 	*/
-	public enum mongoc_insert_flags_t
+	public enum mongoc_insert_flags_t : c_int
 	{
 		MONGOC_INSERT_NONE = 0,
 		MONGOC_INSERT_CONTINUE_ON_ERROR = 1 << 0,
@@ -92,7 +93,7 @@ extension libmongoc
 	* #mongoc_query_flags_t is used for querying a Mongo instance.
 	*/
 	[AllowDuplicates]
-	public enum mongoc_query_flags_t
+	public enum mongoc_query_flags_t : c_int
 	{
 		MONGOC_QUERY_NONE = 0,
 		MONGOC_QUERY_TAILABLE_CURSOR = 1 << 1,
@@ -117,7 +118,7 @@ extension libmongoc
 	* #mongoc_reply_flags_t contains flags supplied by the Mongo server in reply
 	* to a request.
 	*/
-	public enum mongoc_reply_flags_t
+	public enum mongoc_reply_flags_t : c_int
 	{
 		MONGOC_REPLY_NONE = 0,
 		MONGOC_REPLY_CURSOR_NOT_FOUND = 1 << 0,
@@ -135,7 +136,7 @@ extension libmongoc
 	*
 	* #mongoc_update_flags_t is used when updating documents found in Mongo.
 	*/
-	public enum mongoc_update_flags_t
+	public enum mongoc_update_flags_t : c_int
 	{
 		MONGOC_UPDATE_NONE = 0,
 		MONGOC_UPDATE_UPSERT = 1 << 0,

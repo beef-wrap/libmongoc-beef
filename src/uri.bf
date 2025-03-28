@@ -15,9 +15,9 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
@@ -78,7 +78,7 @@ extension libmongoc
 	const char* MONGOC_URI_SSLALLOWINVALIDCERTIFICATES = "sslallowinvalidcertificates";
 	const char* MONGOC_URI_SSLALLOWINVALIDHOSTNAMES = "sslallowinvalidhostnames";
 
-	public struct mongoc_uri_t { };
+	public struct mongoc_uri_t { }
 
 	[CLink] public static extern mongoc_uri_t*  mongoc_uri_copy(mongoc_uri_t* uri); // BSON_GNUC_WARN_UNUSED_RESULT;
 

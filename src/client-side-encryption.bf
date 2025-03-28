@@ -15,9 +15,9 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
@@ -36,7 +36,7 @@ extension libmongoc
 
 	function bool mongoc_kms_credentials_provider_callback_fn(void* userdata, bson_t* parameters, bson_t* out_, bson_error_t* error);
 
-	[CLink] public static extern mongoc_auto_encryption_opts_t* mongoc_auto_encryption_opts_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_auto_encryption_opts_t* mongoc_auto_encryption_opts_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern void mongoc_auto_encryption_opts_destroy(mongoc_auto_encryption_opts_t* opts);
 
@@ -72,7 +72,7 @@ extension libmongoc
 
 	public struct mongoc_client_encryption_rewrap_many_datakey_result_t;
 
-	[CLink] public static extern mongoc_client_encryption_opts_t* mongoc_client_encryption_opts_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_client_encryption_opts_t* mongoc_client_encryption_opts_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern void mongoc_client_encryption_opts_destroy(mongoc_client_encryption_opts_t* opts);
 
@@ -88,7 +88,7 @@ extension libmongoc
 
 	[CLink] public static extern void mongoc_client_encryption_opts_set_key_expiration(mongoc_client_encryption_opts_t* opts, uint64_t cache_expiration_ms);
 
-	[CLink] public static extern mongoc_client_encryption_rewrap_many_datakey_result_t* mongoc_client_encryption_rewrap_many_datakey_result_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_client_encryption_rewrap_many_datakey_result_t* mongoc_client_encryption_rewrap_many_datakey_result_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern void mongoc_client_encryption_rewrap_many_datakey_result_destroy(mongoc_client_encryption_rewrap_many_datakey_result_t* result);
 
@@ -120,7 +120,7 @@ extension libmongoc
 
 	[CLink] public static extern bool mongoc_client_encryption_decrypt(mongoc_client_encryption_t* client_encryption, bson_value_t* ciphertext, bson_value_t* value, bson_error_t* error);
 
-	[CLink] public static extern mongoc_client_encryption_encrypt_opts_t* mongoc_client_encryption_encrypt_opts_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_client_encryption_encrypt_opts_t* mongoc_client_encryption_encrypt_opts_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern void mongoc_client_encryption_encrypt_opts_destroy(mongoc_client_encryption_encrypt_opts_t* opts);
 
@@ -134,7 +134,7 @@ extension libmongoc
 
 	[CLink] public static extern void mongoc_client_encryption_encrypt_opts_set_query_type(mongoc_client_encryption_encrypt_opts_t* opts, char* query_type);
 
-	[CLink] public static extern mongoc_client_encryption_encrypt_range_opts_t* mongoc_client_encryption_encrypt_range_opts_new(void);
+	[CLink] public static extern mongoc_client_encryption_encrypt_range_opts_t* mongoc_client_encryption_encrypt_range_opts_new();
 
 	[CLink] public static extern void mongoc_client_encryption_encrypt_range_opts_destroy(mongoc_client_encryption_encrypt_range_opts_t* range_opts);
 
@@ -150,7 +150,7 @@ extension libmongoc
 
 	[CLink] public static extern void mongoc_client_encryption_encrypt_opts_set_range_opts(mongoc_client_encryption_encrypt_opts_t* opts, mongoc_client_encryption_encrypt_range_opts_t* range_opts);
 
-	[CLink] public static extern mongoc_client_encryption_datakey_opts_t* mongoc_client_encryption_datakey_opts_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_client_encryption_datakey_opts_t* mongoc_client_encryption_datakey_opts_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern void mongoc_client_encryption_datakey_opts_destroy(mongoc_client_encryption_datakey_opts_t* opts);
 

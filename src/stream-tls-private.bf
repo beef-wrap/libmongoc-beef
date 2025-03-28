@@ -15,9 +15,9 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
@@ -37,7 +37,7 @@ extension libmongoc
 		int64_t timeout_msec;
 		mongoc_ssl_opt_t ssl_opts;
 		function bool handshake(mongoc_stream_t* stream, char* host, int* events /* OUT*/, bson_error_t* error);
-	};
+	}
 
 #if MONGOC_ENABLE_SSL_OPENSSL && OPENSSL_VERSION_NUMBER >= 0x10100000L
 	[CLink] public static extern (mongoc_stream_t *) mongoc_stream_tls_new_with_hostname_and_openssl_context (mongoc_stream_t *base_stream, char* host, mongoc_ssl_opt_t *opt, int client, SSL_CTX *ssl_ctx) BSON_GNUC_WARN_UNUSED_RESULT;

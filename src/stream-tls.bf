@@ -15,15 +15,15 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
 	public struct mongoc_stream_tls_t;
 
-	public struct mongoc_ssl_opt_t {};
+	public struct mongoc_ssl_opt_t {}
 
 	[CLink] public static extern bool mongoc_stream_tls_handshake(mongoc_stream_t* stream, char* host, int32_t timeout_msec, int* events, bson_error_t* error);
 

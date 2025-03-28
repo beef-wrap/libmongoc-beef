@@ -17,11 +17,11 @@
 using System;
 using System.Interop;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 public static class libmongoc
 {
-	typealias size_t = c_uintptr;
+	typealias size_t = uint;
 	typealias ssize_t = size_t;
 	typealias char = c_char;
 	typealias unsigned = c_uint;
@@ -44,5 +44,5 @@ public static class libmongoc
 	{
 		c_long tv_sec; /* seconds */
 		c_long tv_usec; /* and microseconds */
-	};
+	}
 }

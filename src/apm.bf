@@ -16,9 +16,9 @@
 
 
 using System;
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {

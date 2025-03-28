@@ -15,15 +15,16 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using System.Interop;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
 	public struct mongoc_read_prefs_t;
 
-	public enum mongoc_read_mode_t
+	public enum mongoc_read_mode_t : c_int
 	{
 	   /** Represents $readPreference.mode of 'primary' */
 		MONGOC_READ_PRIMARY = (1 << 0),

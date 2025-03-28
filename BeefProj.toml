@@ -3,11 +3,13 @@ Dependencies = {corlib = "*", libbson-beef = "*"}
 
 [Project]
 Name = "libmongoc-beef"
-TargetType = "BeefLib"
-StartupObject = "libbson_beef.Program"
-DefaultNamespace = "libbson_beef"
+DefaultNamespace = "libmongoc"
 
 [Configs.Debug.Win64]
 OtherLinkFlags = "$(LinkFlags) Advapi32.lib ws2_32.lib Bcrypt.lib secur32.lib crypt32.lib Dnsapi.lib"
 BeefLibType = "Static"
-LibPaths = ["$(ProjectDir)/lib/mongoc-static-1.0.lib"]
+LibPaths = ["$(ProjectDir)\\libs\\windows\\x64\\mongoc_d.lib"]
+
+[Configs.Release.Win64]
+OtherLinkFlags = "$(LinkFlags) Advapi32.lib ws2_32.lib Bcrypt.lib secur32.lib crypt32.lib Dnsapi.lib"
+LibPaths = ["$(ProjectDir)\\libs\\windows\\x64\\mongoc.lib"]

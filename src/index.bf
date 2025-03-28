@@ -15,9 +15,10 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using System.Interop;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
@@ -38,7 +39,7 @@ extension libmongoc
 		int type;
 	}
 
-	public enum mongoc_index_storage_opt_type_t
+	public enum mongoc_index_storage_opt_type_t : c_int
 	{
 		MONGOC_INDEX_STORAGE_OPT_MMAPV1,
 		MONGOC_INDEX_STORAGE_OPT_WIREDTIGER,
@@ -73,11 +74,11 @@ extension libmongoc
 		void[4]* padding;
 	}
 
-	[CLink] public static extern mongoc_index_opt_t*  mongoc_index_opt_get_default(void); // BSON_GNUC_PURE;
+	[CLink] public static extern mongoc_index_opt_t*  mongoc_index_opt_get_default(); // BSON_GNUC_PURE;
 
-	[CLink] public static extern mongoc_index_opt_geo_t*  mongoc_index_opt_geo_get_default(void); // BSON_GNUC_PURE;
+	[CLink] public static extern mongoc_index_opt_geo_t*  mongoc_index_opt_geo_get_default(); // BSON_GNUC_PURE;
 
-	[CLink] public static extern mongoc_index_opt_wt_t*  mongoc_index_opt_wt_get_default(void); // BSON_GNUC_PURE;
+	[CLink] public static extern mongoc_index_opt_wt_t*  mongoc_index_opt_wt_get_default(); // BSON_GNUC_PURE;
 
 	[CLink] public static extern void mongoc_index_opt_init(mongoc_index_opt_t* opt);
 

@@ -16,7 +16,7 @@
 
 using System;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
@@ -24,5 +24,5 @@ extension libmongoc
 
 	[CLink] public static extern void mongoc_rand_add(void* buf, int num, double entropy);
 
-	[CLink] public static extern int mongoc_rand_status(void);
+	[CLink] public static extern int mongoc_rand_status();
 }

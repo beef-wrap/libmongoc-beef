@@ -15,13 +15,14 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using System.Interop;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
-	public enum mongoc_find_and_modify_flags_t
+	public enum mongoc_find_and_modify_flags_t : c_int
 	{
 		MONGOC_FIND_AND_MODIFY_NONE = 0,
 		MONGOC_FIND_AND_MODIFY_REMOVE = 1 << 0,
@@ -31,7 +32,7 @@ extension libmongoc
 
 	public struct mongoc_find_and_modify_opts_t;
 
-	[CLink] public static extern mongoc_find_and_modify_opts_t*  mongoc_find_and_modify_opts_new(void); // BSON_GNUC_WARN_UNUSED_RESULT;
+	[CLink] public static extern mongoc_find_and_modify_opts_t*  mongoc_find_and_modify_opts_new(); // BSON_GNUC_WARN_UNUSED_RESULT;
 
 	[CLink] public static extern bool mongoc_find_and_modify_opts_set_sort(mongoc_find_and_modify_opts_t* opts, bson_t* sort);
 

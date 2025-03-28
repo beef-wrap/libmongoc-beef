@@ -17,9 +17,9 @@
 using System;
 using System.Interop;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
-using static libbsonBeef.libbson;
+using static libbson.libbson;
 
 extension libmongoc
 {

@@ -15,14 +15,15 @@
  */
 
 using System;
-using static libbsonBeef.libbson;
+using System.Interop;
+using static libbson.libbson;
 
-namespace libmongocBeef;
+namespace libmongoc;
 
 extension libmongoc
 {
 	[AllowDuplicates]
-	public enum mongoc_error_domain_t
+	public enum mongoc_error_domain_t : c_int
 	{
 		MONGOC_ERROR_CLIENT = 1,
 		MONGOC_ERROR_STREAM,
@@ -46,10 +47,10 @@ extension libmongoc
 		MONGOC_ERROR_POOL,
 		MONGOC_ERROR_AZURE,
 		MONGOC_ERROR_GCP
-	};
+	}
 
 	[AllowDuplicates]
-	public enum mongoc_error_code_t
+	public enum mongoc_error_code_t : c_int
 	{
 		MONGOC_ERROR_STREAM_INVALID_TYPE = 1,
 		MONGOC_ERROR_STREAM_INVALID_STATE,
@@ -135,8 +136,7 @@ extension libmongoc
 		/* An error related to either GCP metadata or Azure IMDS server */
 		MONGOC_ERROR_KMS_SERVER_HTTP,
 		MONGOC_ERROR_KMS_SERVER_BAD_JSON,
-
-	};
+	}
 
 	[CLink] public static extern bool mongoc_error_has_label(bson_t* reply, char* label);
 }
